@@ -21,14 +21,12 @@ void Vendedor::setVentas(int  ventas){
 	ventas =  ventas;
 }
 
-string Vendedor::reporteVendedor(){
-	string reporte;
-
-	reporte =Trabajador::reporte()+"\nSalario Base: " +std::to_string(calcularSalarioBase())+
+string Vendedor::reporte(){
+	return Trabajador::reporte()+"\nSalario Base: " +std::to_string(calcularSalarioBase())+
 		"\nComision: "+std::to_string(calcularSalarioBruto()-calcularSalarioBase())+
 		"\nSalario bruto: " + std::to_string(calcularSalarioBruto()) 
 		+ "\nSalario Neto: " + std::to_string(calcularSalarioNeto())  ;
-	return reporte;
+	 
 }
 float Vendedor::calcularSalarioBase() {
 	return Trabajador::getPrecioHoras() * 48;

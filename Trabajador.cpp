@@ -43,12 +43,7 @@ void Trabajador::setAnnosLaborados(int  annosLaborados)
 	annosLab =  annosLaborados;
 }
 
-string Trabajador::reporte()
-{
-	string reporte;
-
-	reporte = "ID: " + getID() + "\nHoras Laboradas: " + std::to_string(getHorasLab())
+string Trabajador::reporte(){
+ return "ID: " + getID() + "\nHoras Laboradas: " + std::to_string(getHorasLab())
 		+"\n total de annos Laborados: "+ std::to_string(getAnnosLaborados());
-
-	return reporte;
 }

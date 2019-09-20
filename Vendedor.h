@@ -13,21 +13,12 @@ public:
 	int getVentas();
 	void setComision(float);
 	void setVentas(int);
-
-	string reporteVendedor();
-
-
+	string reporte();
 	float calcularSalarioBase();
-
 	float calcularSalarioBruto();
-
-
 	float calcularHorasExtras();
-
 	float calcularAnualidades();
-
 	float calcularCargas();
-
 	float calcularSalarioNeto();
 
 };

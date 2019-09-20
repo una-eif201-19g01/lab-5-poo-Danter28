@@ -6,11 +6,11 @@ private:
 	float bono;
 public:
 	Gerente();
-	Gerente(string _id, int horas, float precioHoras, int annosLaborados, float _bono);
+	Gerente(string , int, float , int, float);
 	float getBono();
 	void setBono(float);
 
-	string reporteGerente();
+	string reporte();
 
 	float calcularSalarioBase();
 

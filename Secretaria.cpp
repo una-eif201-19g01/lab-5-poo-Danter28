@@ -6,12 +6,11 @@ Secretaria::Secretaria(string id, int horas, float precioHoras, int annoLaborado
 
 }
 
-string Secretaria::reporteSecretaria() {
-	string reporte;
-	reporte = Trabajador::reporte() + "\nSalario Base: " + std::to_string(calcularSalarioBase()) +
+string Secretaria::reporte() {
+	return Trabajador::reporte() + "\nSalario Base: " + std::to_string(calcularSalarioBase()) +
 		"\nSalario bruto: " + std::to_string(calcularSalarioBruto())
 		+ "\nSalario Neto: " + std::to_string(calcularSalarioNeto());
-	return reporte;
+	 
 }
 float Secretaria::calcularSalarioBase() {
 

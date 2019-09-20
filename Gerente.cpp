@@ -11,13 +11,12 @@ void Gerente::setBono(float  bono) {
 	this->bono =  bono;
 }
 
-string Gerente::reporteGerente(){
-	string reporte;
-	reporte = Trabajador::reporte() + "\nSalario Base: " + std::to_string(calcularSalarioBase()) +
+string Gerente::reporte(){
+	return Trabajador::reporte() + "\nSalario Base: " + std::to_string(calcularSalarioBase()) +
 		"\nBono: "+std::to_string(getBono())+
 		"\nSalario bruto: " + std::to_string(calcularSalarioBruto())
 		+ "\nSalario Neto: " + std::to_string(calcularSalarioNeto());
-	return reporte;
+	
 }
 
 
