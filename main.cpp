@@ -1,9 +1,10 @@
-#include "Secretaria.h"
-#include "Gerente.h" 
-#include "Vendedor.h"
+//#include "Secretaria.h"
+//#include "Gerente.h" 
+//#include "Vendedor.h"
+#include<iostream>
 
-int main(){
+int main() {
 
+	std::cout << "holaMundo";
 
-
-}
+};
