@@ -6,6 +6,7 @@ class Secretaria: public Trabajador{
 	public:
 		Secretaria();
 		Secretaria(string id, int horas, float precioHoras, int annoLaborados);
+		string reporteSecretaria();
 		float calcularSalarioBase();
 
 		float calcularSalarioBruto();
@@ -14,9 +15,9 @@ class Secretaria: public Trabajador{
 		float calcularHorasExtras();
 
 		float calcularAnualidades();
+		float calcularCargas() ;
 
-		float calcularHorasExtras();
-
+		float calcularSalarioNeto();
 
 };
 #endif

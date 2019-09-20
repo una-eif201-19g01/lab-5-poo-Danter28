@@ -26,7 +26,9 @@ public:
 
 	float calcularAnualidades();
 
-	float calcularHorasExtras();
+	float calcularCargas();
+
+	float calcularSalarioNeto();
 
 };
 #endif

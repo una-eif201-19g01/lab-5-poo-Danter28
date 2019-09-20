@@ -14,13 +14,14 @@ public:
 
 	float calcularSalarioBase();
 
-	float calcularSalarioBruto();
-		
+	float calcularSalarioBruto();		
 
 	float calcularHorasExtras();
 
 	float calcularAnualidades();
 
-	float calcularHorasExtras();
+	float calcularCargas();
+
+	float calcularSalarioNeto();
 };
 #endif

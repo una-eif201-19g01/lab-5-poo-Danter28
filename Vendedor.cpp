@@ -24,25 +24,38 @@ void Vendedor::setVentas(int  ventas){
 string Vendedor::reporteVendedor(){
 	string reporte;
 
-	reporte =Trabajador::reporte()+"\nComision: " +std::to_string(getComision())+ "\nVentas: "+std::to_string(getVentas())+"\n";
+	reporte =Trabajador::reporte()+"\nSalario Base: " +std::to_string(calcularSalarioBase())+
+		"\nComision: "+std::to_string(calcularSalarioBruto()-calcularSalarioBase())+
+		"\nSalario bruto: " + std::to_string(calcularSalarioBruto()) 
+		+ "\nSalario Neto: " + std::to_string(calcularSalarioNeto())  ;
 	return reporte;
 }
 float Vendedor::calcularSalarioBase() {
-
+	return Trabajador::getPrecioHoras() * 48;
 }
 
 float Vendedor::calcularSalarioBruto() {
-	float salariobruto = calcularSalarioBase() + calcularHorasExtras() + calcularAnualidades();
+	return calcularSalarioBase() + calcularHorasExtras() + calcularAnualidades()+(getVentas()*getComision());
 }
 
 float Vendedor::calcularHorasExtras() {
+	float totalHorasExtra=0;
+	if (getHorasLab() >= 48) {
+		for (int horas = getHorasLab(); horas > 48; horas--) {
+			totalHorasExtra += (getPrecioHoras() + (getPrecioHoras() * 0.50));
+		}
+	}
+	return totalHorasExtra;
 
 }
 
 float Vendedor::calcularAnualidades() {
-
+	return ((calcularSalarioBase() * 0.05) * getAnnosLaborados());
+}
+float Vendedor::calcularCargas() {
+	return  (calcularSalarioBruto() * 0.09);
 }
 
-float Vendedor::calcularHorasExtras() {
-
+float Vendedor::calcularSalarioNeto() {
+	return calcularSalarioBruto() - calcularCargas();
 }
